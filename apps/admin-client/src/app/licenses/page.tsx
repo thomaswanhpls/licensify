@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import https from 'https'
 import { License } from '../../context/LicenceContext'
-import LicenseItem from '../../components/LicenseItem'
+import { LicenseItem } from 'ui'
 
 async function getLicenses(): Promise<License[]> {
   try {
