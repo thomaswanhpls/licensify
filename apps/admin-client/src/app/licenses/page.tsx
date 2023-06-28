@@ -18,6 +18,7 @@ async function getLicenses(): Promise<License[]> {
                     id
                     number
                     rentedAt
+                    available
                 }
             }
             `,
@@ -42,9 +43,9 @@ export default async function Linceses() {
         <h1 className="mx-auto bg-gradient-to-r from-brandred to-brandblue bg-clip-text px-2 text-center text-6xl font-extrabold tracking-tight text-transparent sm:text-7xl lg:text-8xl xl:text-8xl">
           Licenses
         </h1>
-        <div className="mx-auto mt-5 flex max-w-xl justify-center space-x-4 md:mt-8">
+        <div className="mx-auto mt-5 flex  justify-center space-x-4 md:mt-8">
           {licenses?.length && (
-            <ul>
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
               {licenses.map((license) => (
                 <LicenseItem key={license.id} license={license} />
               ))}

@@ -4,7 +4,7 @@ import { Button, Card } from 'ui'
 
 const url = 'https://localhost:4000'
 
-export default async function RentLicense() {
+export default function RentLicense() {
   const [rentedLicense, setRentedLicense] = useState<any>(null)
   async function handleClick() {
     const response = await fetch(url, {
@@ -32,9 +32,6 @@ export default async function RentLicense() {
     setRentedLicense(data.rentLicense)
   }
 
-  useEffect(() => {
-    console.log('rentedLicense', rentedLicense)
-  }, [rentedLicense])
   return (
     <>
       {rentedLicense && <Card title={rentedLicense.number} cta="" href="" />}

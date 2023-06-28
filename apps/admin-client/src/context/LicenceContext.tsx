@@ -5,6 +5,7 @@ export type License = {
   id: string
   number: string
   rentedAt: string
+  available: boolean
   owner: string
 }
 
