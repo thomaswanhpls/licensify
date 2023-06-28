@@ -54,9 +54,9 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-      secure: false, // if true only transmit cookie over https
-      httpOnly: false, // if true prevent client side JS from reading the cookie
-      sameSite: false, // Can be set to strict, lax (recommended) or false
+      secure: true, // if true only transmit cookie over https
+      httpOnly: true, // if true prevent client side JS from reading the cookie
+      sameSite: 'none', // Can be set to strict, lax (recommended) or false
     },
   })
 )
@@ -65,7 +65,10 @@ app.use(
 // and our expressMiddleware function.
 app.use(
   '/',
-  cors({ credentials: true, origin: true }),
+  cors({
+    credentials: true,
+    origin: ['http://localhost:3000', 'http://localhost:3001'],
+  }),
   bodyParser.json(),
   // expressMiddleware accepts the same arguments:
   // an Apollo Server instance and optional configuration options

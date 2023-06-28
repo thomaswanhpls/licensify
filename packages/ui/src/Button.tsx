@@ -2,7 +2,7 @@ import * as React from 'react'
 
 interface ButtonProps {
   children: React.ReactNode
-  onClick: React.MouseEventHandler<HTMLButtonElement>
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 export const Button = ({ children, onClick }: ButtonProps) => {
   return (

@@ -37,7 +37,7 @@ export default async function RentLicense() {
   }, [rentedLicense])
   return (
     <>
-      {rentedLicense && <Card>{rentedLicense.number}</Card>}
+      {rentedLicense && <Card title={rentedLicense.number} cta="" href="" />}
       <Button onClick={handleClick}>Rent License</Button>
     </>
   )

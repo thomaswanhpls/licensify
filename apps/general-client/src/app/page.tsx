@@ -5,7 +5,7 @@ import RentLicense from '../components/RentLicense'
 const CARD_CONTENT = [
   {
     title: 'Are you an admin?',
-    href: 'https://turbo.build/repo/docs/core-concepts/caching',
+    href: 'http://localhost:3001',
     cta: 'Go to the dashboard',
   },
 ]
@@ -14,35 +14,7 @@ export const metadata: Metadata = {
   title: 'Licensify App',
 }
 
-const getMyLicense = async () => {
-  // const response = await fetch('https://localhost:4000', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     credentials: 'include',
-  //   },
-  //   body: JSON.stringify({
-  //     query: `
-  //     query myLicense {
-  //       myLicense {
-  //         id
-  //         number
-  //         rentedAt
-  //       }
-  //     }
-  //     `,
-  //   }),
-  // })
-  // console.log('response', response)
-  // return response.json()
-  return { data: { myLicense: { id: 1, number: 1, rentedAt: new Date() } } }
-}
-
 export default async function Home() {
-  const {
-    data: { myLicense },
-  } = await getMyLicense()
-  console.log(myLicense)
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <main className="mx-auto w-auto px-4 pb-8 pt-16 sm:pt-24 lg:px-8">
