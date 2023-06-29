@@ -6,6 +6,7 @@ import { LicenseItem } from 'ui'
 async function getLicenses(): Promise<License[]> {
   try {
     const response = await fetch('https://localhost:4000', {
+      cache: 'no-cache',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
