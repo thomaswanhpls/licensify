@@ -9,6 +9,16 @@ type License = {
 interface LicenseItemProps {
   license: License
 }
+const Availability = ({
+  show,
+  children,
+}: {
+  show: boolean
+  children: React.ReactNode
+}) => {
+  if (!show) return null
+  return <>{children}</>
+}
 
 export const LicenseItem = ({ license }: LicenseItemProps) => {
   const timestamp = Number(license.rentedAt)
@@ -19,17 +29,6 @@ export const LicenseItem = ({ license }: LicenseItemProps) => {
   )
   const showAvailability =
     license.available === true || license.available === false
-
-  const Availability = ({
-    show,
-    children,
-  }: {
-    show: boolean
-    children: React.ReactNode
-  }) => {
-    if (!show) return null
-    return children
-  }
 
   return (
     <li className="ui-mb-2 ui-max-w-sm ui-overflow-hidden ui-rounded ui-bg-white ui-p-3 ui-shadow-lg">
